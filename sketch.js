@@ -1,4 +1,4 @@
-
+let value= -190
 
 
 function setup() {
@@ -8,31 +8,36 @@ function setup() {
 }
 
 function draw() {
- 
- 	
- // translate(40,60);  
-  drawMoon();
-//drawMoon(frames%30, 20, 20);
-//drawMoon(frames%15, 60, 70);
+  
+ drawMoon(value);
 
 }
 
 
-function drawMoon(phase, posx, posy,radius){
+function drawMoon(phase){
 
-  	
-   let locX = mouseX - width / 2;
-  let locY = mouseY - height / 2; 	 
-  pointLight(250, locX, locY, 80);	
-  rotate(radians(frameCount));	
+
+   
+  let locY= height/4;    
+  pointLight(250,123,23,  height/2, locY, phase); 
+  //console.log(locY);
+  rotate(radians(frameCount));  
 
   fill(181, 168, 132);
   noStroke();
-  sphere(110,posx,posy)
+  sphere(110)
  
- // ellipse(posx, posy, phase, phase);
-
- 	
-	
 }
 
+//Day2
+function keyPressed() {
+
+  console.log(key);
+  if (key == 1){
+    value = 1;
+  }
+
+  if (key == 2){
+    value = 90;
+  }
+}
